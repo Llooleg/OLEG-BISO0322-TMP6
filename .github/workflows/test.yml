@@ -7,7 +7,7 @@ jobs:
   build-test:
     runs-on: windows-latest
     steps:
-      - name:  Set up Python
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -20,13 +20,17 @@ jobs:
 
       - name: Setup python environment
         run: |
-          python3 -m venv venv
+          python -m venv venv
           .\venv\Scripts\activate
+
+      - name: Generate requirements.txt
+        run: |
+          pip freeze > requirements.txt
 
       - name: Install libraries
         run: |
           pip install -r requirements.txt
 
-      - name: Tests
+      - name: Run Tests
         run: |
           pytest
