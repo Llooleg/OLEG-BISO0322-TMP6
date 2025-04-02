@@ -22,12 +22,6 @@ jobs:
         run: |
           python -m venv venv
           .\venv\Scripts\activate
-          pip install --upgrade pip
-          pip install pytest  # Установим pytest вручную
-
-      - name: Generate requirements.txt
-        run: |
-          pip freeze > requirements.txt
 
       - name: Install libraries
         run: |
