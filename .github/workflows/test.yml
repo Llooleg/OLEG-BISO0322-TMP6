@@ -21,7 +21,7 @@ jobs:
       - name: Setup python environment
         run: |
           python3 -m venv venv
-          source venv/bin/activate
+          .\venv\Scripts\activate
 
       - name: Install libraries
         run: |
